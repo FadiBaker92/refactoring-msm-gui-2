@@ -22,7 +22,6 @@ class Movie < ApplicationRecord
   belongs_to(:director, class_name: "Director", foreign_key: "director_id")
   #or we can write it like this belongs_to(:director)
 
-  has_many(:actors, through: :characters, source: :actor)
 
   #def director
    # key = self.director_id

@@ -14,14 +14,14 @@ class Character < ApplicationRecord
   belongs_to(:actor, class_name: "Actor", foreign_key: "actor_id")
   #or we can just write belongs_to(:movie) 
 
-  #def movie
-   # key = self.movie_id
+  def movie
+    key = self.movie_id
 
-    #matching_set = Movie.where({ :id => key })
+    matching_set = Movie.where({ :id => key })
 
-    #the_one = matching_set.at(0)
+    the_one = matching_set.at(0)
 
-    #return the_one
-  #end
+    return the_one
+  end
 
 end
