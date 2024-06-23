@@ -19,8 +19,11 @@ class Movie < ApplicationRecord
   has_many(:characters, class_name: "Character", foreign_key: "movie_id")
   #or we can write it like this has_many(:characters)
 
-  balongs_to(:director, class_name: "Director", foreign_key: "director_id")
-  belongs_to(:director)
+  belongs_to(:director, class_name: "Director", foreign_key: "director_id")
+  #or we can write it like this belongs_to(:director)
+
+  has_many(:actors, through: :characters, source: :actor)
+
   #def director
    # key = self.director_id
 
